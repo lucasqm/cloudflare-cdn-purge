@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <xpdevtab translate="label">
+            <label>Resultate</label>
+            <sort_order>0</sort_order>
+        </xpdevtab>
+    </tabs>
+    <sections>
+        <cdn_config translate="label" module="resultate_cachecloudflare">
+            <label>Configuração CloudFlare</label>
+            <tab>xpdevtab</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>200</sort_order>
+            <show_in_default>0</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>0</show_in_store>
+            <groups>
+                <options translate="label">
+                    <label>Opções</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>0</sort_order>
+                    <show_in_default>0</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <zone_id translate="label">
+                            <label>Zone Id</label>
+                            <comment>Dado se localiza na aba 'overview' no painel CloudFlare</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>0</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </zone_id>
+                        <auth_email>
+                            <label>Auth Email</label>
+                            <comment>Email de Login no painel CloudFlare</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>100</sort_order>
+                            <show_in_default>0</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </auth_email>
+                        <auth_key>
+                            <label>Auth Key</label>
+                            <comment>Dado se localiza em 'My Profile' no painel CloudFlare</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>150</sort_order>
+                            <show_in_default>0</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </auth_key>
+                    </fields>
+                </options>
+            </groups>
+        </cdn_config>
+    </sections>
+</config>

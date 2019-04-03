@@ -1,0 +1,66 @@
+<?php $websites = Mage::app()->getWebsites();?>
+
+<br>
+<table class="form-list">
+    <tbody>
+    <tr>
+        <form action="<?php echo Mage::helper('adminhtml')->getUrl('adminhtml/cdn/clean_all', array('_secure' => true)) ?>"
+              type="POST">
+            <td class="scope-label">
+                <button type="submit" class="scalable">
+                    <span><span><span><?php echo $this->__("Liberar CDN") ?></span></span></span>
+                </button>
+            </td>
+            <td class="scope-label">
+                <?php if (count($websites) > 1): ?>
+                    <select name="website" id="website" required="required">
+                        <option value="">Selecione uma opção...</option>
+                        <option value="all">Liberar para todos</option>
+                        <?php foreach ($websites as $website) : ?>
+
+                            <option value="<?php echo $website->getId(); ?>">Liberar
+                                para <?php echo $website->getName(); ?></option>
+
+                        <?php endforeach; ?>
+
+                    </select>
+                <?php else: ?>
+                    <input name="website" id="website" required="required" type="hidden" value="all"/>
+                    Libera o cache CDN de todos os arquivos.
+                <?php endif; ?>
+            </td>
+        </form>
+    </tr>
+    <tr>
+        <form action="<?php echo Mage::helper('adminhtml')->getUrl('adminhtml/cdn/clean_url', array('_secure' => true)) ?>"
+              type="POST">
+            <td class="scope-label">
+                <button
+                        type="submit" class="scalable">
+                    <span><span><span><?php echo $this->__("Liberar CDN da URl") ?></span></span></span>
+                </button>
+            </td>
+            <td class="scope-label" style="width: 450px">
+                <input type="url" name="url" style="width: 100%" required="required"
+                       placeholder="<?php echo $this->__("URL a ser limpa. Ex. " . Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB, true) . "style.css") ?>">
+            </td>
+            <td class="scope-label">
+                <?php if (count($websites) > 1): ?>
+                    <select name="website" id="website" required="required">
+                        <option value="">Selecione o Website...</option>
+                        <?php foreach ($websites as $website) : ?>
+                            <option value="<?php echo $website->getId(); ?>">Liberar
+                                para <?php echo $website->getName(); ?></option>
+                        <?php endforeach; ?>
+
+                    </select>
+                    <?php else: ?>
+                        <?php foreach ($websites as $website) : ?>
+                            <input name="website" id="website" required="required" type="hidden" value="<?php echo $website->getId(); ?>"/>
+                        <?php endforeach; ?>
+                <?php endif; ?>
+            </td>
+        </form>
+    </tr>
+    </tbody>
+</table>

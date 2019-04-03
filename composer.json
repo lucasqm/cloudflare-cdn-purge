@@ -1,0 +1,9 @@
+{
+	"name"        : "magento/cloudflare-cdn-purge",
+	"type"        : "magento-module",
+	"homepage"    : "https://git.xpd.com.br/magento/cloudflare-cdn-purge.git",
+	"description" : "Extension to purge Cloudflare's CDN",
+	"require"     : {
+		"magento-hackathon/magento-composer-installer" : "*"
+	}
+}

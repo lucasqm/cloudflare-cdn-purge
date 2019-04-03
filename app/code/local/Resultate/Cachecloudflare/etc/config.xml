@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Resultate_Cachecloudflare>
+            <version>0.1.0</version>
+        </Resultate_Cachecloudflare>
+    </modules>
+    <global>
+        <models>
+            <resultate_cachecloudflare>
+                <class>Resultate_Cachecloudflare_Model</class>
+            </resultate_cachecloudflare>
+        </models>
+        <helpers>
+            <resultate_cachecloudflare>
+                <class>Resultate_Cachecloudflare_Helper</class>
+            </resultate_cachecloudflare>
+        </helpers>
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <resultate_cachecloudflare>
+                    <file>resultate_cachecloudflare.xml</file>
+                </resultate_cachecloudflare>
+            </updates>
+        </layout>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Resultate_Cachecloudflare before="Mage_Adminhtml">Resultate_Cachecloudflare_Adminhtml</Resultate_Cachecloudflare>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>
